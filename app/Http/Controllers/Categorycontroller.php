@@ -12,7 +12,8 @@ class Categorycontroller extends Controller
         $data->name = $req->input('name');
         $data->user_id = $req->input('user');
         $data->save();
-        return ['category'=>'added'];
+        return ['category added'];
+        
     }
     public function destroy($id){
         $data = Category::find($id);

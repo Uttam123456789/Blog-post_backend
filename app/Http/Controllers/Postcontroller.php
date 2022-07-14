@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Post;
+use App\Models\User;
 
 class Postcontroller extends Controller
 {
@@ -23,12 +24,13 @@ class Postcontroller extends Controller
      $data->category_id = $req->input('category_id');
      $data->save();
      return ['posted'=>'successfully'];
+    // return $req;
     }
 
     public function destroy($id){
         $data = Post::find($id);
         $data->delete();
-        return $data;
+        return "Deleted Successfully";
     }
 
 
@@ -51,7 +53,10 @@ class Postcontroller extends Controller
         // return $data;
     }
     public function view(){
+        
+
         $data = Post::all();
         return $data;
+
     }
 }

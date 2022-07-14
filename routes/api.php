@@ -31,6 +31,8 @@ Route::middleware('auth:api')->get("home",[Usercontroller::class,'home']);
 Route::middleware('auth:api')->post('logoutUser',[Usercontroller::class,'logoutUser']);
 // Route::post('/logoutUser',[Usercontroller::class,'logoutUser'])->middleware('auth:api');
 Route::post("update/{id}",[Usercontroller::class,'update']);
+Route::get("userView/{id}",[Usercontroller::class,'list']);
+Route::get("detail",[Usercontroller::class,'detail']);
 
 
 //category

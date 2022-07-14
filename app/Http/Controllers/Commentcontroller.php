@@ -26,6 +26,7 @@ class Commentcontroller extends Controller
 
         return $data;
     }
+    
     public function destroy($id){
         $data = Comment::find($id);
         $data->delete();
