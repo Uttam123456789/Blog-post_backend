@@ -18,7 +18,8 @@ class Categorycontroller extends Controller
     public function destroy($id){
         $data = Category::find($id);
         $data->delete();
-        return $data;
+        return "deleted successfully";
+        // return $data;
     }
     public function update(Request $req , $id)
     {

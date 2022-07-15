@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\User;
+use App\Models\Category;
+use App\Models\Comment;
 
 class Postcontroller extends Controller
 {
@@ -58,5 +60,14 @@ class Postcontroller extends Controller
         $data = Post::all();
         return $data;
 
+    }
+
+    public function postDetail($id){
+        $post = Post::find($id);
+        $category = Category::find($post->category_id);
+        $user = User::find($post->user_id);
+        $comment =Comment::where("post_id", $id)->get();
+        return ["post"=>$post , "Author"=>$user->name , "Category"=>$category->name, "comments"=>$comment];
+          
     }
 }

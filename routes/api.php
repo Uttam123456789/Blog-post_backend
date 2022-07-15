@@ -47,6 +47,8 @@ Route::post("postStore",[Postcontroller::class,'store']);
 Route::delete("postDelete/{id}",[Postcontroller::class,'destroy']);
 Route::post("postUpdate/{id}",[Postcontroller::class,'update']);
 Route::get("postView",[Postcontroller::class,'view']);
+Route::get("postDetail/{id}",[Postcontroller::class,'postDetail']);
+
 
 
 // comments
