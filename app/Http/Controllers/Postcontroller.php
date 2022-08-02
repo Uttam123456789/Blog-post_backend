@@ -61,6 +61,10 @@ class Postcontroller extends Controller
         return $data;
 
     }
+    public function userPost($id){
+        $data = Post::where("user_id", $id)->get();
+        return $data;
+    }
 
     public function postDetail($id){
         $post = Post::find($id);

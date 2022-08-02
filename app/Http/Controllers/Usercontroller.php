@@ -63,10 +63,11 @@ public function loginUser(Request $req){
 
     public function logoutUser(Request $req)
     {
-        // $token = $req->user()->token();
-        // $token->revoke();
 
+        $token = $req->user()->token();
+        $token->revoke();
         return ['message'=> 'You have successfully logout!!'];
+        // return $token;
     }
 
     public function update(Request $req , $id){

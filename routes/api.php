@@ -28,10 +28,10 @@ Route::post("userStore",[Usercontroller::class,'store']);
 Route::post("login",[Usercontroller::class,'loginUser']);
 // Route::get("login",[Usercontroller::class,'loginUser']);
 Route::middleware('auth:api')->get("home",[Usercontroller::class,'home']);
-Route::middleware('auth:api')->post('logoutUser',[Usercontroller::class,'logoutUser']);
+Route::middleware('auth:api')->get('logoutUser',[Usercontroller::class,'logoutUser']);
 // Route::post('/logoutUser',[Usercontroller::class,'logoutUser'])->middleware('auth:api');
 Route::post("update/{id}",[Usercontroller::class,'update']);
-Route::get("userView/{id}",[Usercontroller::class,'list']);
+Route::middleware('auth:api')->get("userView/{id}",[Usercontroller::class,'list']);
 Route::get("detail",[Usercontroller::class,'detail']);
 
 
@@ -47,6 +47,7 @@ Route::post("postStore",[Postcontroller::class,'store']);
 Route::delete("postDelete/{id}",[Postcontroller::class,'destroy']);
 Route::post("postUpdate/{id}",[Postcontroller::class,'update']);
 Route::get("postView",[Postcontroller::class,'view']);
+Route::get("userPost/{id}",[Postcontroller::class,'userPost']);
 Route::get("postDetail/{id}",[Postcontroller::class,'postDetail']);
 
 
